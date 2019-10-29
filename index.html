@@ -1,56 +1,47 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    
-    
-    <title>fmdsopmfdpomfpo</title>
-  </head>
-  <header>
-</header>
-  <body>
-    <div style="text-align: center">
-          <input id="tweet-input" type="text" name="">
-          <button id="btn">Add tweet</button>
-    </div>
-        <script src="jquery.js"></script>
+    <link rel="stylesheet" href="css.css">
+    <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    
+    <button id ='actualise'>new tweets</button>
 
+    <button id = 'tweet'> add tweet</button>
+    <input type="text" id="youTweet">
+    <div id ='main'>
+      
     <script>
 
+      $('button#actualise').on('click', function(){
+        var newt = generateRandomTweet() ;
+        newt['time'] = Date.now() ;
+        var newtweet = $('<div id =\'xx\'></div>');
+        newtweet.text('@' + newt.user + ': ' + newt.message + '  ' + newt.created_at.toUTCString());
+        newtweet.appendTo('body');
+      })
 
-      // $(document).ready(function(){
-      //   var $body = $('body');
-      //  // $body.html('');
+      $('button#tweet').on('click', function(){
+        var newt = generateRandomTweet() ;
+        newt.user = 'user' ;
+        newt.message = $('input#youTweet').val()
+        newt['time'] = Date.now() ;
+        var newtweet = $('<div id =\'xx\'></div>');
+        newtweet.text('@' + newt.user + ':  ' + newt.message + '  ' + newt.created_at.toUTCString());
+        newtweet.appendTo('body');
+      })
+     
+      
 
-      //   var index = array.length - 1;
-      //   while(index >= 0){
-      //     var tweet = array[index];
-      //     var $tweet = $('<div ></div>');
-      //     $tweet.text('@' + tweet.user + ': ' + tweet.message);
-      //     $tweet.appendTo($body);
-      //     index -= 1;
-      //   }
-
-      // });
-
-      // $(document).ready(function(){
-      //   var $body = $('body');
-      //  // $body.html('');
-
-      //   var index = streams.home.length - 1;
-      //   while(index >= 0){
-      //     var tweet = streams.home[index];
-      //     var $tweet = $('<div></div>');
-      //     $tweet.text('@' + tweet.user + ': ' + tweet.message);
-      //     $tweet.appendTo($body);
-      //     index -= 1;
-      //   }
-
-      // });
+      
+   
+  
 
     </script>
-
+    
+    </div>
+  </center>
   </body>
 </html>
