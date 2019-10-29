@@ -1,0 +1,16 @@
+div{
+    width : 50%;
+    height : 50px ;
+    border-color: red;
+    margin : 10px ;
+    background-color: burlywood;
+    text-align: left;
+    border: solid 2px;
+    
+}
+body{
+    background-color: beige;
+    text-align: right;
+    
+    
+}
